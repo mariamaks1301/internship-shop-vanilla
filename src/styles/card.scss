@@ -1,0 +1,39 @@
+
+.card{
+    width: calc(33.33333% - 30px);
+    background: #fff;
+    padding: 10px 10px 20px;
+    border-radius: 8px;
+
+
+    &__img{
+        width: 100%;
+        height: 450px;
+    
+    }
+    &__info{
+        padding: 20px 15px 0;
+        border-top: 1px solid $grey;
+    }
+    &__title{
+        @include text($poppins, 700, 22px, 1.1, $black);
+        height: 50px;
+        overflow: hidden;
+        margin-bottom: 14px;
+
+
+    }
+    &__desc{
+        @include text($poppins, 500, 15px, 1.7, $grey);
+        margin-bottom: 14px;
+        height: 157px;
+        overflow-y: scroll;
+
+    }
+    &__row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}

@@ -1,0 +1,17 @@
+.entries{
+    padding: 30px 0;
+    &__row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__title{
+        @include text($poppins, 700, 80px, 1.1, $black);
+        margin-bottom: 10px;
+
+    }
+    &__subtitle{
+        @include text($poppins, 500, 22px, 1.4, $grey);
+        margin-bottom: 38px;
+    }
+}

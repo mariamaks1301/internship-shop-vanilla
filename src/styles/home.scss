@@ -1,0 +1,26 @@
+.home{
+    margin-top: -80px;
+    background: $light;
+    padding: 200px 0;
+
+    &__row{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    &__load-more-row{
+        margin-top: -80px;
+    }
+}
+
+.load__more-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include text($poppins, 500, 25px, 1.1, $light);
+    margin-bottom: 15px;
+
+}

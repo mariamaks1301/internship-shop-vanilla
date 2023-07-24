@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+// font-family: 'Poppins', sans-serif;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+    transition: .3s all ease-in-out;
+}
+
+
+.container{
+    max-width: 1230px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+$black: #34313D;
+$purple: #3A3054;
+$lightPurpel: #4B3F6B;
+$grey: #9E9AA8;
+$light: #EFF1F7;
+$turquoise: #2BD0D0;
+
+$roboto : 'Roboto', sans-serif;
+$poppins : 'Poppins', sans-serif;
+
+@mixin text ($ff, $fw, $fz, $lh, $c) {
+    font-family: $ff;
+    font-weight: $fw;
+    font-size: $fz;
+    line-height: $lh;
+    color: $c;
+  
+}
+
+.logo{
+    @include text($poppins, 500, 32px, 1.2, $black);
+    text-transform: uppercase;
+}
+
+
+.btn{
+    display: inline-block;
+    width: 180px;
+    height: 46px;
+    background: $turquoise;
+    border: 4px solid $turquoise;
+    border-radius: 28px;
+    color: $light;
+    transition: .3s all linear;
+    cursor: pointer;
+
+    &:hover{
+        background: $purple;
+        border: 1px solid $purple;
+
+    }
+    &-small{
+        width: 135px;
+    }
+    &-load{
+        &:hover{
+            background: $light;
+            border: 2px solid $turquoise;
+            color: $black;
+        }
+    }
+    
+}
+.load__title{
+    margin-bottom: 20px;
+}
+
+
+
+
+@import "header";
+@import "filter";
+@import "entries";
+@import "home";
+@import "card";
+
+
+
+

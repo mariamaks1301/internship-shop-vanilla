@@ -1,0 +1,33 @@
+.header{
+    background: #fff;
+    padding: 14px 0 16px;
+     
+    &__row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__left{
+        display: flex;
+        column-gap: 120px;
+        align-items: center;
+    }
+    &__right{
+         display: flex;
+        column-gap: 80px;
+        align-items: center;
+    }
+    &__menu{
+        display: flex;
+        column-gap: 60px;
+        align-items: center;
+    }
+    &__link{
+        @include text($poppins, 700, 15px, 1.2, $grey);
+        text-transform: uppercase;
+        cursor: pointer;
+        &:hover{
+            color: $purple;
+        }
+    }
+}
