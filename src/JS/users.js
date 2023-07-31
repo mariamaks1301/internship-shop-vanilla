@@ -1,13 +1,6 @@
 //https://jsonplaceholder.typicode.com/users
 
-function debounce(fn, ms){
-    let timeout;
-    return function(){
-        const fnCall = () => {fn.apply(this, arguments)}
-        clearTimeout(timeout)
-        timeout = setTimeout(fnCall, ms)
-    }
-}
+
 
 const userList = document.querySelector('.user__row');
 const btnUsers = document.querySelector('.load__users');
@@ -19,7 +12,7 @@ let userSearch = '';
 function loadUsers(){
     if(userList){
         userList.innerHTML = '';
-        fetch(`https://jsonplaceholder.typicode.com/users?_limit=${limitUser+'&'}${userSearch.length ? 'name_like='+userSearch+'&' : ''}`)
+        fetch(`https://jsonplaceholder.typicode.com/users?_limit=${limitUser+'&'}${userSearch.length ? 'name_like='+userSearch : ''}`)
             .then(res => res.json())
             .then(data => {
                 if(userList.innerHTML !== null){
@@ -69,13 +62,29 @@ if(btnUsers){
 
 }
 
-if(searchFieldUser){
-    searchFieldUser.addEventListener('keyup', (e)=> {
-        userSearch = e.target.value;
-        debounce(loadUsers(), 500000);
-    })
 
-}
+const debounce = (fn, ms) => {
+    let timeout;
+    return function () {
+      const fnCall = () => { fn.apply(this, arguments) }
+      clearTimeout(timeout);
+      timeout = setTimeout(fnCall, ms)
+    };
+  }
+  
+
+    function onChangeUser(e) {
+        userSearch = e.target.value;
+        if(userSearch.trim().length){
+            loadUsers(userSearch.toLowerCase().trim());
+        }
+    }
+
+  
+  
+  onChangeUser = debounce(onChangeUser, 500);
+  
+  document.querySelector('.filter__user-field').addEventListener('keyup', onChangeUser);
 
 
 

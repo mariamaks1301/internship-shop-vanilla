@@ -3,15 +3,18 @@
 // https://restcountries.com/v3.1/name/{name}
 // https://restcountries.com/v3.1/all?fields=name,capital,currencies
 
-function debounce(fn, ms){
-    let timeout;
-    return function(){
-        const fnCall = () => {fn.apply(this, arguments)}
-        clearTimeout(timeout)
-        timeout = setTimeout(fnCall, ms)
-    }
-}
+// const debounce = (fn, delay) => {
+//     let timeout;
+//     return (...args) => {
+//       clearTimeout(timeout);
+//       let fnCall = () => {
+//         fn(...args);
+//       };
+//       timeout = setTimeout(fnCall, delay);
+//     };
+//   };
 
+  
 
 const countryList = document.querySelector('.countries__row');
 const regionSelect = document.querySelector('.filter__select-region');
@@ -201,22 +204,42 @@ const getCountriesByRegion = () => {
 
  
 
-if(filterCountry !== null){
-    filterCountry.addEventListener('keyup', (e)=> {
-       searchCountry = e.target.value;
-       console.log(searchCountry);
-       debounce(getCountriesByTitle(searchCountry), 10000);
-   })
 
-}
-
-if(searchClose !== null){
+if(searchClose){
     searchClose.addEventListener('click', (e)=> {
-        console.log(e.target.value);
+        setTimeout(e.target.value, 10000);
         searchCountry = '';
     })
 
 }
+
+
+const debounce = (fn, ms) => {
+    let timeout;
+    return function () {
+      const fnCall = () => { fn.apply(this, arguments) }
+      clearTimeout(timeout);
+      timeout = setTimeout(fnCall, ms)
+    };
+  }
+  
+
+    function onChange(e) {
+    searchCountry = e.target.value;
+    if(searchCountry.trim().length){
+        getCountriesByTitle(searchCountry.toLowerCase().trim());
+    }
+    }
+
+  
+  
+  onChange = debounce(onChange, 500);
+  
+  document.querySelector('.filter__country-field').addEventListener('keyup', onChange);
+
+
+
+
 
 
 
