@@ -4,42 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countries</title>
+    <link rel="stylesheet" href="../../src/styles/style.css">
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="header__row">
-                <div class="header__logo"></div>
-                <nav class="header__nav">
-                    <ul class="header__menu">
-                        <li class="header__item">
-                            <a class="header__link" href="">Shop Page</a>
-                        </li>
-                        <li class="header__item">
-                            <a  class="header__link" href="./pages/countries/index.html">Countries Page</a>
-                        </li>
-                        <li class="header__item">
-                            <a  class="header__link" href="./pages/users/index.html">Users Page</a>
-                        </li>
-                    </ul>
-                </nav>
+                <div class="header__left">
+                    <div class="header__logo logo">Shop</div>
+                    <nav class="header__nav">
+                        <ul class="header__menu">
+                            <li class="header__item">
+                                <a class="header__link" href="../../index.html">Shop Page</a>
+                            </li>
+                        
+                            <li class="header__item">
+                                <a  class="header__link" href="../users/index.html">Users Page</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header__right">
+                    <a class="header__link" href="#"> LogIn</a>
+                    <button class="btn">Sign Up</button>
+                </div>
+
             </div>
         </div>
     </header>
     <main>
-        
-        <section class="countries">
+        <section class="filter">
             <div class="container">
-                <div class="countries__row">
-                    <div class="countries__card">
-                        
+                <div class="filter__row">
+                    <div class="filter__category">
+ 
+                        <select  class="filter__select filter__select-region" id="region">
+                            <option disabled class="filter__option" value="">Filter by region</option>
+                            <option class="filter__option" value="europe">Europe</option>
+                            <option class="filter__option" value="asia">Asia</option>
+                            <option class="filter__option" value="africa">Africa</option>
+                            <option class="filter__option" value="oceania">Oceania</option>
+                            <option class="filter__option" value="america">America</option>
+                        </select>
+
+
+                    </div>
+                    <div class="filter__title filter__country">
+                        <input class="filter__title-field filter__country-field" type="text" placeholder="Search by county name">
                     </div>
                 </div>
             </div>
         </section>
+        <section class="countries">
+            <div class="container">
+                <div class="countries__row row"> 
+                </div>
+            </div>
+        </section>
     </main>
-
-
     
+
+
+    <script type="module" src="../../src/JS/countries.js"></script>
 </body>
 </html>

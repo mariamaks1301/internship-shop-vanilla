@@ -57,15 +57,17 @@
             <div class="container">
                 <div class="filter__row">
                     <div class="filter__category">
-                        <select class="filter__select">
-                            <option disabled value="all">all</option>
+
+                        <select  class="filter__select" id="category">
+                            <option class="filter__option" value="all">all</option>
+         
                         </select>
 
 
                     </div>
                     <div class="filter__title">
-                        <input type="text">
-                        <button class="btn"></button>
+                        <input class="filter__title-field" type="text" placeholder="Search by title">
+                        <button class="btn btn-load">Search</button>
 
                     </div>
                 </div>
@@ -81,8 +83,7 @@
             <div class="container">
                <div class="filter__row home__load-more-row">
                     <div class="load__more-content">
-                        <h3 class="load__title">Load all</h3>
-                        <button class="btn btn-load">Load</button>
+                        <button class="btn btn-load">Load more</button>
                     </div>
                </div>
             </div>
@@ -94,6 +95,9 @@
     </footer>
 
     <script src="./src/JS/main.js"></script>
+    <script type="module" src="./src/JS/countries.js"></script>
+    <script type="module" src="./src/JS/users.js"></script>
+
 
 </body>
 </html>

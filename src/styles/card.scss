@@ -4,6 +4,7 @@
     background: #fff;
     padding: 10px 10px 20px;
     border-radius: 8px;
+    
 
 
     &__img{
@@ -30,10 +31,38 @@
         overflow-y: scroll;
 
     }
+    &__text{
+        @include text($poppins, 500, 16px, normal, $black);
+
+        span{
+        @include text($poppins, 500, 15px, normal, $grey);
+        padding-right: 10px;
+
+        }
+    }
     &__row{
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+    &__country{
+        border: 1px solid grey;
+        border-radius: none;
+        &-img{
+            height: 250px;
+        }
+        &-title{
+            margin-bottom: 10px;
+        }
+        
+    }
+    &__user{
+        text-align: center;
+        padding: 20px 15px;
+        border: 1px solid grey;
+        border-radius: 6px;
+        height: auto;
+        max-height: 300px;
     }
 
 }

@@ -65,6 +65,26 @@
   margin-bottom: 20px;
 }
 
+.home__row {
+  min-height: 60vh;
+}
+
+.countries__row {
+  padding: 30px 0;
+  min-height: 60vh;
+}
+
+.user__row {
+  padding: 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
+  min-height: 60vh;
+}
+
 .header {
   background: #fff;
   padding: 14px 0 16px;
@@ -158,12 +178,83 @@
 .filter__category {
   width: 50%;
   position: absolute;
+  top: 50%;
+  left: 42%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   z-index: 2;
 }
 .filter__title {
   width: 50%;
   position: absolute;
+  top: 50%;
+  left: 80%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 14px;
+     -moz-column-gap: 14px;
+          column-gap: 14px;
+}
+.filter__title-field {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.1;
+  color: #34313D;
+  width: 260px;
+  height: 45px;
+  border-radius: 4px;
+  padding: 0 15px;
+}
+.filter__title-field::-webkit-input-placeholder {
+  color: #9E9AA8;
+}
+.filter__title-field::-moz-placeholder {
+  color: #9E9AA8;
+}
+.filter__title-field:-ms-input-placeholder {
+  color: #9E9AA8;
+}
+.filter__title-field::-ms-input-placeholder {
+  color: #9E9AA8;
+}
+.filter__title-field::placeholder {
+  color: #9E9AA8;
+}
+.filter__select {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.1;
+  color: #34313D;
+  width: 260px;
+  height: 45px;
+  padding: 0 15px;
+  cursor: pointer;
+}
+.filter__select-region {
+  width: 300px;
+}
+.filter__country-field {
+  width: 300px;
+}
+.filter__country {
+  position: relative;
+}
+.filter__country-close {
+  position: absolute;
+  top: 50%;
+  right: 316px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .entries {
@@ -262,6 +353,21 @@
   height: 157px;
   overflow-y: scroll;
 }
+.card__text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: normal;
+  color: #34313D;
+}
+.card__text span {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: normal;
+  color: #9E9AA8;
+  padding-right: 10px;
+}
 .card__row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -272,4 +378,22 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.card__country {
+  border: 1px solid grey;
+  border-radius: none;
+}
+.card__country-img {
+  height: 250px;
+}
+.card__country-title {
+  margin-bottom: 10px;
+}
+.card__user {
+  text-align: center;
+  padding: 20px 15px;
+  border: 1px solid grey;
+  border-radius: 6px;
+  height: auto;
+  max-height: 300px;
 }

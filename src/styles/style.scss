@@ -82,6 +82,21 @@ $poppins : 'Poppins', sans-serif;
 .load__title{
     margin-bottom: 20px;
 }
+.home__row{
+    min-height: 60vh;
+}
+.countries__row{
+    padding: 30px 0;
+    min-height: 60vh;
+
+}
+.user__row{
+    padding: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    min-height: 60vh;
+}
 
 
 
